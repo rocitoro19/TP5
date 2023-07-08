@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario de registro</title>
+    <script>
+        function enviarFormulario() {
+            // Realizar aquí cualquier validación adicional del formulario si es necesario
+
+            // Mostrar la alerta al enviar el formulario
+            alert("Se envió correctamente");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Formulario de Registro</h1>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br>
+
+        <label for="username">UserName:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Enviar" onclick="enviarFormulario()">
+    </form>
+</body>
+
+</html>

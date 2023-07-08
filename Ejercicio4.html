@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Galería de imágenes</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.2);
+            z-index: 1;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function openModal(image) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modal-image");
+            modal.style.display = "block";
+            modalImg.src = image.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Galería de Imágenes</h1>
+    <div class="gallery">
+        <img src="imagen1.jpg" onclick="openModal(this)">
+        <img src="imagen2.jpg" onclick="openModal(this)">
+        <img src="imagen3.jpg" onclick="openModal(this)">
+        <!-- Agrega más imágenes aquí -->
+    </div>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <img id="modal-image">
+    </div>
+</body>
+
+</html>
